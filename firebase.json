@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "params": [
+    {
+      "param": "MANAGER_PIN",
+      "label": "Manager PIN",
+      "description": "PIN code for accessing the manager panel",
+      "type": "secret"
+    }
+  ]
+}

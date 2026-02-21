@@ -1,0 +1,86 @@
+# Git Ignore File
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Node/NPM Files
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+.yarn
+yarn.lock
+
+# Build & Development
+dist/
+build/
+.cache/
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.nyc_output
+*.lcov
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.temp
+.#*
+
+# Editor backup files
+*~
+*.swp
+*.bak
+
+# Mac files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# Compiled files
+*.pyc
+*.pyo
+*.class
+*.jar
+
+# IDE
+.vscode
+.env
+.env.local
+.env.*.local
+
+# Misc
+.cache
+.idea
+*.sublime-project
+*.sublime-workspace

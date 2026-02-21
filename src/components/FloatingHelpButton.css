@@ -1,0 +1,258 @@
+/* FloatingHelpButton.css */
+
+.floating-help-btn {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.floating-help-btn:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.floating-help-btn:active {
+    transform: scale(0.95);
+}
+
+.floating-help-btn.open {
+    transform: rotate(45deg);
+}
+
+.help-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.help-content {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.help-close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-lighter);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.help-close:hover {
+    background: var(--border-light);
+}
+
+.help-title {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.help-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.help-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.help-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.help-section p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.help-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--primary);
+}
+
+.help-tip {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(236, 72, 153, 0.1));
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0;
+    text-align: center;
+    border-right: 4px solid var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .floating-help-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+        bottom: 1.5rem;
+        left: 1.5rem;
+    }
+
+    .help-content {
+        padding: 1.5rem;
+        max-width: 90vw;
+    }
+
+    .help-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .help-section {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .help-section h3 {
+        font-size: 1rem;
+    }
+
+    .help-section p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-help-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .help-modal {
+        padding: 0.5rem;
+    }
+
+    .help-content {
+        padding: 1.25rem;
+        border-radius: 12px;
+        max-height: 90vh;
+    }
+
+    .help-close {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        top: 0.75rem;
+        left: 0.75rem;
+    }
+
+    .help-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .help-section {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .help-section h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .help-section p {
+        font-size: 0.85rem;
+    }
+
+    .help-footer {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .help-tip {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .help-content {
+        background: var(--bg-main);
+    }
+
+    .help-close {
+        background: var(--bg-lighter);
+    }
+
+    .help-section {
+        border-bottom-color: var(--border);
+    }
+}
